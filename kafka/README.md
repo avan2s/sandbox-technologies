@@ -1,2 +1,3 @@
 ## helpful links
-https://developer.confluent.io/learn/kraft/
+- kraft replacing zookeeper: https://developer.confluent.io/learn/kraft/
+- image: https://hub.docker.com/r/bitnami/kafka
