@@ -11,4 +11,4 @@ COPY . /app
 RUN npm install
 
 # Specify the command to run your application
-CMD ["node", "topic.ts"]
+# CMD ["node", "topic.ts"]s
