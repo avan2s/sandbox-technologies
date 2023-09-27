@@ -1,9 +1,11 @@
 import { Kafka } from "kafkajs";
+const sleep = (milliseconds: number) => new Promise(resolve => setTimeout(resolve, milliseconds));
+const PRODUCER_TOPIC = process.env.PRODUCER_TOPIC || 'topic';
 
   const run = async () => {
     const kafka = new Kafka({
         clientId: 'my-app',
-        brokers: ['kafka:9092']
+        brokers: ['kafka:9092'],
       });
    
     const producer = kafka.producer({allowAutoTopicCreation: false});
@@ -14,12 +16,14 @@ import { Kafka } from "kafkajs";
       const message = `Hello KafkaJS user ${i+1}!`;
       console.log(`Producing message ${message}`);
       await producer.send({
-        topic: 'Users',
+        topic: PRODUCER_TOPIC,
         messages: [
           { value: message },
         ],
       })
+      await sleep(1000);
     }
+    process.exit(0);
   }
   
   run().catch(console.error);
