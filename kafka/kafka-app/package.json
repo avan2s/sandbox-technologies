@@ -1,0 +1,16 @@
+{
+  "name": "consumer",
+  "module": "topic.ts",
+  "type": "module",
+  "scripts": {
+    "start": "docker compose up -d && bun run topic.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.7.0",
+    "bun-types": "latest",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
