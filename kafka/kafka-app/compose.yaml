@@ -14,7 +14,8 @@ services:
     volumes:
       - kafka-persistence:/bitnami/kafka
 
-  topic-service:
+  # responsible in out case for creating topics
+  admin-service:
     build:
       context: .
       dockerfile: Dockerfile
@@ -22,6 +23,18 @@ services:
       - ${PWD}:/app
       - topicmodules:/app/node_modules
     command: sh -c "npm install && npx tsx topic.ts"
+
+    depends_on:
+      - kafka
+
+  producer1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ${PWD}:/app
+      - topicmodules:/app/node_modules
+    command: sh -c "npm install && npx tsx producer.ts"
 
     depends_on:
       - kafka
