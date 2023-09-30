@@ -3,7 +3,8 @@
   "module": "topic.ts",
   "type": "module",
   "scripts": {
-    "start": "docker compose up -d && bun run topic.ts"
+    "start": "docker compose up -d && bun run topic.ts",
+    "start:admin:local": "docker compose -f local-docker-compose.yaml up -d && npx tsx topic.ts localhost"
   },
   "devDependencies": {
     "@types/node": "^20.7.0",

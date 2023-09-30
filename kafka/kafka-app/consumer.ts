@@ -1,6 +1,6 @@
 import { Consumer, Kafka } from "kafkajs";
 const CONSUMER_GROUP = process.env.CONSUMER_GROUP || 'consumergroup1';
-const SUBSCRIBED_TOPICS = (process.env.SUBSCRIBED_TOPICS || 'topic').split(',').map(s => s.trim());
+const SUBSCRIBED_TOPICS = (process.env.SUBSCRIBED_TOPICS || 'users').split(',').map(s => s.trim());
 
 async function retryOperation(operation: Function, maxTries=10, delayMs=1000) {
     let tries = 0;
