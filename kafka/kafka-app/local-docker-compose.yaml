@@ -13,8 +13,18 @@ services:
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
       - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
       - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - DOCKER_HOST_NAME=$(hostname)
     volumes:
       - kafka-persistence:/bitnami/kafka
+    # extra_hosts:
+      # - mypc:host-gateway
+      # - host.docker.internal:host-gateway
+
+  # alpine:
+  #   image: alpine:latest
+  #   extra_hosts:
+  #     - mypc:host-gateway
+      # - host.docker.internal:host-gateway
 
 volumes:
   kafka-persistence:
