@@ -6,8 +6,9 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
+    "test": "vitest run",
     "test:watch": "vitest --watch",
-    "test": "vitest run"
+    "ci": "pnpm run lint && pnpm run test && pnpm run build"
   },
   "keywords": [],
   "author": "",
