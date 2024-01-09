@@ -11,6 +11,14 @@ This example projects is based on the following video: https://www.youtube.com/w
 "build": "tsup src/index.ts --format cjs,esm --dts",
 "lint": "tsc",
 ```
+3. add ci pipeline with test in `./github/workflows/main.yml`. Since this is currently a mono repo, also the nodejs setup github action must be configured with a cache dependency path:
+```yml
+- uses: actions/setup-node@v3
+    with:
+      node-version: 20.x
+      cache: "pnpm"
+      cache-dependency-path: "build-ci-publish-example/pnpm-lock.yaml"
+```
 
 
 
