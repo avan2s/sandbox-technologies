@@ -15,7 +15,7 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                 node-version: 20.x
-                cache: "pnpm"
+                cache: "foo"
                 cache-dependency-path: "build-ci-publish-example/pnpm-lock.yaml"
             - run: cd build-ci-publish-example && pnpm install --frozen-lockfile
             - run: cd build-ci-publish-example && pnpm run ci
