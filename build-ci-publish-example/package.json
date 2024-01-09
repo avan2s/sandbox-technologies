@@ -1,6 +1,6 @@
 {
   "name": "@avh/build-ci-publish-example",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This project demonstrates an example npm library with an hello world function",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
