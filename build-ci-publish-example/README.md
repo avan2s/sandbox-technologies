@@ -22,7 +22,7 @@ This example projects is based on the following video: https://www.youtube.com/w
 4. Adjust and set the index modules, index file and types in `package.json`:
 ```
   "main": "./dist/index.js",
-  "module": "./dist/index",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
 ```
 
