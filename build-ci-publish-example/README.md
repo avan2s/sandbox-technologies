@@ -28,7 +28,7 @@ This example projects is based on the following video: https://www.youtube.com/w
 
 5. create npm account if not already done on https://www.npmjs.com/
 6. Create an access token in the npm profile top right and => access token and safe it in the guithub repo as a github repo secret
-7. Add changeset library and initialize it for release changes: `pnpm add -D @changesets/cli && pnpm changeset init`
+7. Add changeset library and initialize it for release changes: `pnpm add -D @changesets/cli && pnpm changeset init`. Whenever you want to publish new changes  do `pnpm changeset` and give it a name.
 8. Add a release script, which will lint, test, build and publish the libary to `package.json`
 ```json
 "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
@@ -77,6 +77,11 @@ export default  defineConfig ({
     // config options
 })
 ```
+12. if you want to publish it to public npmjs set in `package.json`
+```json 
+private: false
+```
+13. In the created `.changeset/config.json` set `"access": "public"` for publishing these changesets
 
 
 
@@ -84,3 +89,5 @@ export default  defineConfig ({
 Here are additional helpful docs for this project:
 - https://tsup.egoist.dev/#typescript--javascript
 - https://vitest.dev/guide/debugging
+- https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md
+- https://github.com/changesets/action?tab=readme-ov-file#custom-publishing
