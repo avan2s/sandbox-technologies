@@ -10,12 +10,14 @@
     "lint": "tsc",
     "test": "vitest run",
     "test:watch": "vitest --watch",
-    "ci": "pnpm run lint && pnpm run test && pnpm run build"
+    "ci": "pnpm run lint && pnpm run test && pnpm run build",
+    "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "andy",
+  "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@types/node": "^20.10.6",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
