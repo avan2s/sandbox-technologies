@@ -82,7 +82,7 @@ export default  defineConfig ({
 private: false
 ```
 13. In the created `.changeset/config.json` set `"access": "public"` for publishing these changesets
-14. In your github repo settings choose `Settings` -> Actions -> General -> workflow permissions and set it to `Read and write permissions`
+14. In your github repo settings choose `Settings` -> Actions -> General -> workflow permissions and set it to `Read and write permissions` and check the box `Allow GitHub Actions to create and approve pull requests`
 
 
 
