@@ -1,8 +1,10 @@
 {
-  "name": "build-ci-publish-example",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@avh/build-ci-publish-example",
+  "version": "0.0.1",
+  "description": "This project demonstrates an example npm library with an hello world function",
+  "main": "./dist/index.js",
+  "module": "./dist/index",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",

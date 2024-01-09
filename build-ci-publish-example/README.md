@@ -19,6 +19,12 @@ This example projects is based on the following video: https://www.youtube.com/w
       cache: "pnpm"
       cache-dependency-path: "build-ci-publish-example/pnpm-lock.yaml"
 ```
+4. Adjust and set the index modules, index file and types in `package.json`:
+```
+  "main": "./dist/index.js",
+  "module": "./dist/index",
+  "types": "./dist/index.d.ts",
+```
 
 
 
